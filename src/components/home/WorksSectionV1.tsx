@@ -120,7 +120,7 @@ export default function WorksSectionV1() {
                   <div className="absolute top-4 left-4"><p className="text-[10px] font-medium tracking-[0.15em]" style={{ color:'rgba(200,192,184,0.3)' }}>PROJECT {active.num}</p></div>
                   <div className="absolute top-4 right-4"><p className="text-[10px] tracking-[0.1em]" style={{ color:'rgba(200,192,184,0.22)' }}>{active.year} / {active.category.split(' ')[0]}</p></div>
                   <div className="absolute bottom-4 left-4"><p className="text-[10px] tracking-[0.08em] tabular-nums" style={{ color:'rgba(200,192,184,0.2)' }}>{active.duration}</p></div>
-                  <div className="absolute bottom-4 right-4"><p className="text-[9px] tracking-[0.08em] uppercase" style={{ color:'rgba(200,192,184,0.15)' }}>PAN YIBING / SELECTED WORK</p></div>
+                  <div className="absolute bottom-4 right-4"><p className="text-[9px] tracking-[0.08em] uppercase" style={{ color:'rgba(200,192,184,0.15)' }}>CHENG CHUANG / SELECTED WORK</p></div>
                 </div>
                 {/* Crop marks */}
                 <div className="absolute inset-0 pointer-events-none">

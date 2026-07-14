@@ -76,7 +76,7 @@ export default function HomePage() {
         <div className="relative z-10 w-full h-full flex flex-col lg:flex-row items-end lg:items-end justify-between mx-auto max-w-7xl px-8 sm:px-12">
           <motion.div className="relative z-20 flex flex-col justify-end pb-12 lg:pb-16 w-full lg:w-[44%]" style={{ opacity: heroOpacity }}>
             <p className="text-[10px] font-medium tracking-[0.25em] uppercase mb-6" style={{ color: 'rgba(200,192,184,0.28)' }}>Digital Content &amp; Creative Projects</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3" style={{ color: '#C8C0B8' }}>潘奕冰</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-3" style={{ color: '#C8C0B8' }}>程创</h1>
             <p className="text-sm sm:text-base font-medium tracking-[0.06em] mb-4" style={{ color: 'rgba(200,192,184,0.55)' }}>数字内容与创意项目实践者</p>
             <p className="text-[13px] sm:text-[14px] leading-relaxed max-w-[420px] mb-8" style={{ color: 'rgba(200,192,184,0.45)', lineHeight: '1.7' }}>用影像、内容与生成式AI，将创意转化为可以被观看、传播和使用的项目。</p>
             <div className="flex items-center gap-4">
@@ -94,7 +94,7 @@ export default function HomePage() {
           <motion.div className="absolute lg:relative inset-0 lg:inset-auto flex items-end justify-center lg:justify-end z-[8] pointer-events-none lg:pointer-events-auto lg:w-[56%]"
             style={{ x: parallaxOn ? personPX : 0, y: parallaxOn ? personPY : 0, scale: personScale, translateY: personY, opacity: heroOpacity }}>
             <div className="absolute inset-0 flex items-end lg:items-center justify-center lg:justify-end pointer-events-none overflow-visible z-0" aria-hidden="true" style={{ x: parallaxOn ? bgPX : 0 }}>
-              <p className="hidden lg:block font-black uppercase tracking-tight leading-[0.85] text-center lg:text-right" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)', color: 'rgba(200,192,184,0.06)' }}>PAN YIBING</p>
+              <p className="hidden lg:block font-black uppercase tracking-tight leading-[0.85] text-center lg:text-right" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)', color: 'rgba(200,192,184,0.06)' }}>CHENG CHUANG</p>
             </div>
             <div className="relative z-10 flex items-end justify-center h-full w-full lg:w-auto" style={{ pointerEvents: 'auto' }}>
               <img src={publicAsset("/portrait/hero-portrait.png")} alt="" className="w-auto max-w-none object-contain object-bottom select-none" style={{ height: isMobile ? 'clamp(55vh, 65vh, 75vh)' : 'clamp(70vh, 88vh, 92vh)', maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)' }} draggable={false} />
@@ -159,7 +159,7 @@ export default function HomePage() {
             <a href="mailto:819859568@qq.com" className="rounded-xl border px-6 py-3.5 text-[13px] font-medium transition-all" style={{ borderColor: 'rgba(200,192,184,0.06)', color: 'rgba(200,192,184,0.5)', backgroundColor: 'rgba(200,192,184,0.02)' }}>发送邮件</a>
           </div>
           <p className="text-[16px] font-medium mb-1" style={{ color: 'rgba(200,192,184,0.6)' }}>杭州</p>
-          <p className="text-[11px]" style={{ color: 'rgba(200,192,184,0.2)' }}>&copy; {new Date().getFullYear()} 潘奕冰</p>
+          <p className="text-[11px]" style={{ color: 'rgba(200,192,184,0.2)' }}>&copy; {new Date().getFullYear()} 程创</p>
         </div>
       </section>
     </>

@@ -91,7 +91,7 @@ export default function HeroSection() {
               PAN<br />YIBING
             </h1>
             <div className="mb-5">
-              <p className="text-2xl font-bold tracking-wide" style={{ color: 'rgba(200,192,184,0.85)' }}>潘奕冰</p>
+              <p className="text-2xl font-bold tracking-wide" style={{ color: 'rgba(200,192,184,0.85)' }}>程创</p>
               <p className="text-[13px] mt-1.5 tracking-[0.08em]" style={{ color: 'rgba(200,192,184,0.42)' }}>数字内容与创意项目实践者</p>
             </div>
             <p className="text-[13px] leading-relaxed max-w-[340px] mb-8" style={{ color: 'rgba(200,192,184,0.28)' }}>
@@ -126,7 +126,7 @@ export default function HeroSection() {
               muted loop playsInline preload="metadata" onError={() => setVideoError(true)}
               style={{ maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 5%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.15) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 5%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.15) 96%, rgba(0,0,0,0) 100%)' }} />
           ) : (
-            <img src="/portrait/hero-portrait.png" alt="潘奕冰"
+            <img src="/portrait/hero-portrait.png" alt="程创"
               className="h-[88%] w-auto max-w-none object-contain object-bottom"
               style={{ maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 5%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.15) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 5%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.15) 96%, rgba(0,0,0,0) 100%)' }} />
           )}
@@ -145,7 +145,7 @@ export default function HeroSection() {
               muted loop playsInline preload="metadata" onError={() => setVideoError(true)}
               style={{ maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 6%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.2) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 6%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.2) 96%, rgba(0,0,0,0) 100%)' }} />
           ) : (
-            <img src="/portrait/hero-portrait.png" alt="潘奕冰"
+            <img src="/portrait/hero-portrait.png" alt="程创"
               className="h-[82%] w-auto max-w-none object-contain object-bottom" />
           )}
           <div className="absolute bottom-0 left-0 right-0 h-[8%] pointer-events-none"
@@ -153,7 +153,7 @@ export default function HeroSection() {
         </div>
         {/* Text below person */}
         <div className="px-6 pb-8 pt-2 space-y-2">
-          <h2 className="text-2xl font-bold tracking-tight" style={{ color: 'rgba(200,192,184,0.9)' }}>潘奕冰</h2>
+          <h2 className="text-2xl font-bold tracking-tight" style={{ color: 'rgba(200,192,184,0.9)' }}>程创</h2>
           <p className="text-[11px] font-medium tracking-[0.12em] uppercase" style={{ color: 'rgba(200,192,184,0.35)' }}>数字内容与创意项目实践者</p>
           <div className="flex gap-3 pt-3">
             <Link to="/#selected-works"

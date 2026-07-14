@@ -117,7 +117,7 @@ export default function AboutSectionV3() {
               {/* Warm reading glow */}
               <div className="absolute -inset-8 rounded-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(200,192,184,0.03) 0%, transparent 60%)' }} />
               <motion.div className="relative" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-                <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="潘奕冰"
+                <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="程创"
                   className="w-auto object-contain object-bottom select-none"
                   style={{
                     height: 'clamp(420px, 55vh, 580px)',
@@ -284,7 +284,7 @@ export default function AboutSectionV3() {
         {/* MOBILE */}
         <div className="lg:hidden space-y-12">
           <motion.div className="flex justify-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-            <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="潘奕冰"
+            <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="程创"
               className="w-auto object-contain object-bottom"
               style={{
                 height: 'clamp(300px, 55vh, 450px)',

@@ -9,7 +9,7 @@ interface MetaTags {
 
 export function useMetaTags({ title, description, ogImage, ogType }: MetaTags) {
   useEffect(() => {
-    document.title = `${title} | 潘奕冰`
+    document.title = `${title} | 程创`
 
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`)
