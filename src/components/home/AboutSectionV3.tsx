@@ -117,13 +117,15 @@ export default function AboutSectionV3() {
               {/* Warm reading glow */}
               <div className="absolute -inset-8 rounded-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(200,192,184,0.03) 0%, transparent 60%)' }} />
               <motion.div className="relative" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-                <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="程创"
-                  className="w-auto object-contain object-bottom select-none"
+                {/* TEMP: 程创肖像未提供，暂用占位 */}
+                <div className="flex items-center justify-center rounded-2xl border border-white/[0.04] select-none"
                   style={{
                     height: 'clamp(420px, 55vh, 580px)',
-                    maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.03) 4%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.08) 95%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.03) 4%, rgba(0,0,0,1) 14%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.08) 95%, rgba(0,0,0,0) 100%)',
-                  }} draggable={false} />
+                    width: 'clamp(280px, 35vh, 380px)',
+                    backgroundColor: 'rgba(200,192,184,0.015)',
+                  }}>
+                  <span className="text-[11px] tracking-[0.15em]" style={{ color: 'rgba(200,192,184,0.1)' }}>PORTRAIT PLACEHOLDER</span>
+                </div>
               </motion.div>
             </div>
 
@@ -284,13 +286,11 @@ export default function AboutSectionV3() {
         {/* MOBILE */}
         <div className="lg:hidden space-y-12">
           <motion.div className="flex justify-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-            <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="程创"
-              className="w-auto object-contain object-bottom"
-              style={{
-                height: 'clamp(300px, 55vh, 450px)',
-                maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 5%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 78%, rgba(0,0,0,0.1) 94%, rgba(0,0,0,0) 100%)',
-                WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 5%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 78%, rgba(0,0,0,0.1) 94%, rgba(0,0,0,0) 100%)',
-              }} />
+            {/* TEMP mobile placeholder */}
+            <div className="flex items-center justify-center rounded-2xl border border-white/[0.04]"
+              style={{ height: 'clamp(300px, 55vh, 450px)', width: '100%', maxWidth: '320px', backgroundColor: 'rgba(200,192,184,0.015)' }}>
+              <span className="text-[11px] tracking-[0.15em]" style={{ color: 'rgba(200,192,184,0.1)' }}>PORTRAIT PLACEHOLDER</span>
+            </div>
           </motion.div>
           <div className="grid grid-cols-2 gap-4">
             {stats.map(s => <div key={s.key}><span className="text-2xl font-bold" style={{ color: 'rgba(200,192,184,0.85)' }}>{s.value}</span><p className="text-[11px] mt-0.5" style={{ color: 'rgba(200,192,184,0.4)' }}>{s.label}</p></div>)}
