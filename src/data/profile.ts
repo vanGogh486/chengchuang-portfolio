@@ -1,32 +1,36 @@
 /**
- * 个人信息集中管理
- * 修改姓名、标题、教育、联系方式等只需改这个文件
+ * 程创个人信息集中管理
  */
 
 export const PROFILE = {
   name: '程创',
   nameEn: 'CHENG CHUANG',
-  title: '【待补充：职业定位】',
-  subtitle: '【待补充：能力标签】',
+  title: '内容策划与 AIGC 互动叙事',
+  subtitle: 'CONTENT STRATEGY & INTERACTIVE STORYTELLING',
 
   intro: [
-    '【待补充：个人简介段落一 — 请提供80-120字的专业自我介绍】',
-    '【待补充：个人简介段落二】',
-    '【待补充：个人简介段落三】',
+    '2025届数字媒体技术本科毕业生，具备内容策划、账号运营、互动叙事与AIGC内容制作能力。',
+    '曾参与剧组抖音账号运营，实现新增粉丝2000+、单条视频最高播放10万+；同时拥有游戏动作制作和Unity项目实践经验。',
+    '擅长将模糊创意拆解为选题、脚本、分镜和可演示内容，希望在品牌、游戏或AI科技团队中，从事内容策划与运营工作。',
   ],
 
-  location: '【待补充：所在城市】',
+  location: '杭州',
+  targetCities: '杭州、上海、苏州、成都、重庆',
+  jobStatus: '全职，已毕业，一周内到岗',
 
   contact: {
-    email: '【待补充：邮箱】',
+    email: '260271511@qq.com',
+    phone: '19013900142',
   },
 
-  siteName: '程创｜个人简历与作品集',
+  siteName: '程创｜内容策划与AIGC互动叙事',
 } as const
 
 export const EDUCATION = {
-  school: '【待补充：学校名称】',
-  major: '【待补充：专业】',
-  degree: '【待补充：学历】',
-  period: '【待补充：入学年份—毕业年份】',
+  school: '大连东软信息学院',
+  major: '数字媒体技术',
+  degree: '本科',
+  period: '2021.09—2025.06',
+  rank: '专业排名前10%',
+  extras: '大学英语四级 · G CROSS平面设计大赛银奖 · 文艺委员 · 艺术社团',
 } as const

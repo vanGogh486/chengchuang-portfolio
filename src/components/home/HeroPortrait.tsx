@@ -116,7 +116,7 @@ export default function HeroPortrait({
           ) : (
             <img
               src={imageSrc}
-              alt="潘奕冰"
+              alt=""
               className="h-full w-auto max-w-none object-contain object-bottom select-none"
               style={{
                 WebkitMaskImage:

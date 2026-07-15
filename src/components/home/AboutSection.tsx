@@ -62,7 +62,7 @@ export default function AboutSection() {
           <motion.div className="space-y-8" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.5, delay: 0.1 }}>
             {/* Portrait */}
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border border-white/[0.06]">
-              <img src="/media/portfolio-v2/about/portrait.png" alt="潘奕冰"
+              <img src="/media/portfolio-v2/about/portrait.png" alt=""
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Intro */}

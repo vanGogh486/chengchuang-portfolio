@@ -1,5 +1,4 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import CinematicProjectViewer from './CinematicProjectViewer'
 import { publicAsset } from '@/lib/publicAsset'
@@ -9,17 +8,14 @@ interface ProjectEntry {
   category: string; year: string; role: string; summary: string
   cover: string; duration: string; preview?: string; fullVideo?: string
   objectPosition: string; cssFilter?: string; hoverVideo?: string
-  aspectRatio?: 'landscape' | 'portrait'
+  aspectRatio?: 'landscape' | 'portrait'; published?: boolean
   disclaimer?: string
 }
 
 const entries: ProjectEntry[] = [
-  { slug:'unarmored', num:'01', title:'《卸甲》', titleEn:'UNARMORED', category:'AIGC叙事动画短片', year:'2026', role:'创意策划 / 视觉风格 / 分镜设计 / AIGC生成 / 剪辑包装', summary:'战争结束后，木兰回到故乡，却发现身体已经回家，记忆仍停留在战场。以冷灰水墨与克制叙事，讨论如何带着伤口重新生活。', cover:'/media/portfolio-v2/projects/unarmored/poster.png', duration:'00:02:28:00', objectPosition:'center 30%', preview:'/projects/unarmored/preview.mp4', hoverVideo:'/projects/unarmored/preview.mp4', fullVideo:'/projects/unarmored/full.mp4' },
-  { slug:'vivo-relic', num:'02', title:'《终局圣物》', titleEn:'THE FINAL RELIC', category:'AIGC产品概念片', year:'2026', role:'卖点拆解 / 内容策划 / 脚本分镜 / Prompt设计 / AIGC生成 / 剪辑复盘', summary:'将手机的防护、防水、续航与通信能力，转译成异世界Boss战中的关键生存能力，用短剧化叙事替代传统参数堆叠。', cover:'/media/portfolio-v2/projects/vivo/poster.png', duration:'00:00:57:00', objectPosition:'center center', preview:'/projects/vivo-relic/preview.mp4', fullVideo:'/projects/vivo-relic/full.mp4' },
-  { slug:'sk2-concept', num:'03', title:'SK-II 神仙水 AIGC概念广告', titleEn:'SK-II CONCEPT FILM', category:'AIGC商业视觉练习', year:'2026', role:'视觉定位 / 分镜设计 / Prompt设计 / 产品一致性控制 / 剪辑包装', summary:'以冷白银色、镜面水域、液体微距与极简产品英雄镜头，完成一支45秒高端护肤品概念TVC，重点验证产品还原和统一视觉控制。', cover:'/media/portfolio-v2/projects/sk2/poster.png', duration:'00:00:45:00', objectPosition:'center 40%', preview:'/projects/sk2-concept/preview.mp4', fullVideo:'/projects/sk2-concept/full.mp4' },
-  { slug:'midnight-elevator', num:'04', title:'《午夜电梯》', titleEn:'MIDNIGHT ELEVATOR', category:'AIGC互动恐怖短片 Demo', year:'2026', role:'互动机制 / 文字脚本 / 用户路径 / UI信息层级 / 双分支制作', summary:'女主被困在不存在的B13层，观众必须在开门救人和关门自保之间选择。包含A/B分支、倒计时确认、QTE和双分支结局。', cover:'/media/portfolio-v2/projects/midnight-elevator/poster.png', duration:'00:01:30:00', objectPosition:'center center', cssFilter:'brightness(1.18) contrast(1.06)', preview:'/projects/midnight-elevator/preview.mp4', fullVideo:'/projects/midnight-elevator/full.mp4', aspectRatio:'portrait' },
-  { slug:'ysl-lipstick', num:'05', title:'YSL小金条 #21', titleEn:'YSL ROUGE PUR COUTURE #21', category:'美妆商业视觉 / AIGC概念广告', year:'2026', role:'创意方向 / 产品视觉 / 分镜 / AIGC画面生成 / 产品一致性 / 视频动态化 / 剪辑包装', summary:'以YSL小金条#21为主体的AIGC概念广告，聚焦口红产品的高端质感与视觉呈现。', cover:'/projects/ysl-lipstick/cover.jpg', duration:'00:00:15:00', objectPosition:'center 35%', preview:'/projects/ysl-lipstick/full.mp4', fullVideo:'/projects/ysl-lipstick/full.mp4', aspectRatio:'landscape', disclaimer:'个人概念作品 / 非品牌官方合作' },
-  { slug:'echocalypse-lilith', num:'06', title:'《绯色回响》莉莉丝生日邀请', titleEn:'ECHOCALYPSE · LILITH INVITATION', category:'二次元互动视觉 / AIGC概念短片', year:'2026', role:'内容策划 / 角色视觉 / 邀请函UI / 分镜与节奏 / AIGC画面生成 / 视频动态化 / 剪辑包装', summary:'以《绯色回响》角色莉莉丝为主体的生日邀请互动概念短片。采用竖屏9:16格式，融入游戏角色视觉与邀请函UI设计。', cover:'/projects/echocalypse-lilith/cover.png', duration:'00:00:15:00', objectPosition:'center center', preview:'/projects/echocalypse-lilith/full.mp4', fullVideo:'/projects/echocalypse-lilith/full.mp4', aspectRatio:'portrait', disclaimer:'个人概念作品 / 非官方内容创作' },
+  { slug:'unarmored', num:'01', title:'《卸甲》', titleEn:'UNARMORED', category:'AIGC叙事短片', year:'2025', role:'独立创作者 — 创意策划 / 剧本 / 分镜 / 视觉生成 / 动态化 / 后期制作', summary:'独立完成创意策划、脚本分镜、人物与场景生成、动态化和后期剪辑。以战争结束后的木兰为切口，通过物件、动作和环境表达创伤、归来与身份转变。', cover:'/media/portfolio-v2/projects/unarmored/poster.png', duration:'00:02:34', objectPosition:'center 30%', preview:'/projects/unarmored/preview.mp4', hoverVideo:'/projects/unarmored/preview.mp4', fullVideo:'/projects/unarmored/full.mp4' },
+  { slug:'midnight-elevator', num:'02', title:'《午夜电梯》', titleEn:'MIDNIGHT ELEVATOR', category:'互动悬疑短片', year:'2025', role:'独立创作者 — 互动结构 / 悬疑节奏 / 脚本分镜 / AI生成 / 后期制作', summary:'完成9:16互动悬疑内容策划，以分支选择、线索递进和限时决策推动剧情，负责氛围设定、脚本分镜、画面生成和成片制作。', cover:'/media/portfolio-v2/projects/midnight-elevator/poster.png', duration:'00:01:30', objectPosition:'center center', cssFilter:'brightness(1.18) contrast(1.06)', preview:'/projects/midnight-elevator/preview.mp4', fullVideo:'/projects/midnight-elevator/full.mp4', aspectRatio:'portrait' },
+  { slug:'vivo-relic', num:'03', title:'vivo 产品概念宣传视频', titleEn:'VIVO CONCEPT FILM', category:'品牌内容与视觉练习', year:'2025', role:'独立制作 — 卖点拆解 / 内容策划 / 镜头设计 / AI生成 / 剪辑包装', summary:'从产品功能卖点出发，完成内容结构、镜头设计、AI画面生成和剪辑包装，建立卖点—场景—节奏的内容映射，并针对产品一致性与商业质感进行多轮优化。', cover:'/media/portfolio-v2/projects/vivo/poster.png', duration:'00:00:57', objectPosition:'center center', preview:'/projects/vivo-relic/preview.mp4', fullVideo:'/projects/vivo-relic/full.mp4', disclaimer:'个人概念练习' },
 ]
 
 export default function WorksSectionV1() {
@@ -136,42 +132,12 @@ export default function WorksSectionV1() {
               <div><p className="text-[9px] font-medium tracking-[0.12em] uppercase mb-1" style={{ color:'rgba(200,192,184,0.35)' }}>Category</p><p className="text-[12px]" style={{ color:'rgba(200,192,184,0.6)' }}>{active.category}</p></div>
               <div><p className="text-[9px] font-medium tracking-[0.12em] uppercase mb-1" style={{ color:'rgba(200,192,184,0.35)' }}>Role</p><p className="text-[12px] leading-relaxed" style={{ color:'rgba(200,192,184,0.55)' }}>{active.role}</p></div>
               <p className="text-[12px] leading-relaxed" style={{ color:'rgba(200,192,184,0.45)' }}>{active.summary}</p>
-              <div className="pt-2 space-y-2">
-                {active.slug === 'unarmored' ? (
-                  <>
-                    <p className="text-[9px] font-medium tracking-[0.12em] uppercase" style={{ color:'rgba(184,147,110,0.45)' }}>SIGNATURE EXPERIENCE</p>
-                    <Link to="/project/unarmored" className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
-                      style={{ color:'#B8936E' }}>
-                      ENTER BOOK EXPERIENCE
-                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
-                    </Link>
-                    <br/>
-                    <button onClick={()=>setViewerOpen(true)} className="text-[10px] tracking-[0.08em] transition-colors duration-300"
-                      style={{ color:'rgba(200,192,184,0.28)' }}>
-                      沉浸式书册放映 · 查看项目 →
-                    </button>
-                  </>
-                ) : active.slug === 'midnight-elevator' ? (
-                  <>
-                    <p className="text-[9px] font-medium tracking-[0.12em] uppercase" style={{ color:'rgba(184,147,110,0.45)' }}>INTERACTIVE NARRATIVE</p>
-                    <Link to="/project/midnight-elevator?mode=interactive" className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
-                      style={{ color:'#B8936E' }}>
-                      PLAY INTERACTIVE STORY
-                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </Link>
-                    <br/>
-                    <button onClick={()=>setViewerOpen(true)} className="text-[10px] tracking-[0.08em] transition-colors duration-300"
-                      style={{ color:'rgba(200,192,184,0.28)' }}>
-                      A/B分支互动剧情 · 查看项目 →
-                    </button>
-                  </>
-                ) : (
-                  <button onClick={()=>setViewerOpen(true)} className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
-                    style={{ color:'#B8936E' }}>
-                    VIEW PROJECT
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
-                  </button>
-                )}
+              <div className="pt-2">
+                <button onClick={()=>setViewerOpen(true)} className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
+                  style={{ color:'#B8936E' }}>
+                  VIEW PROJECT
+                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
+                </button>
               </div>
             </motion.div>
           </div>

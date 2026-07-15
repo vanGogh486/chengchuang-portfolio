@@ -66,7 +66,8 @@ export default function HomePage() {
       <section ref={sectionRef} className="relative min-h-screen flex items-end bg-[#0C0C0C]" onMouseMove={onMouseMove}>
         <div className="absolute inset-0 z-0" aria-hidden="true">
           {/* Static poster fallback — always visible behind video for iOS/mobile */}
-          <img src={publicAsset("/portrait/hero-portrait.png")} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 lg:opacity-0" aria-hidden="true" />
+          {/* 手机端Hero背景 — 程创 (1.jpg 草坪正面张开双臂) */}
+          <img src={publicAsset("/chengchuang/portrait/hero-mobile.jpg")} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 lg:opacity-0" aria-hidden="true" />
           {showVideo && !bgVideoError ? (
             <video ref={bgVideoRef} src={publicAsset("/media/portfolio-v2/hero/hero-background.mp4")} className="w-full h-full object-cover opacity-[0.22]" muted loop playsInline preload="metadata" />
           ) : (<div className="absolute inset-0 bg-[#0C0C0C]" />)}
@@ -97,7 +98,8 @@ export default function HomePage() {
               <p className="hidden lg:block font-black uppercase tracking-tight leading-[0.85] text-center lg:text-right" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)', color: 'rgba(200,192,184,0.06)' }}>CHENG CHUANG</p>
             </div>
             <div className="relative z-10 flex items-end justify-center h-full w-full lg:w-auto" style={{ pointerEvents: 'auto' }}>
-              <img src={publicAsset("/portrait/hero-portrait.png")} alt="" className="w-auto max-w-none object-contain object-bottom select-none" style={{ height: isMobile ? 'clamp(55vh, 65vh, 75vh)' : 'clamp(70vh, 88vh, 92vh)', maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)' }} draggable={false} />
+              {/* 桌面端Hero人物 — 程创 (3.jpg 夜晚阳台白T恤半身) */}
+              <img src={publicAsset("/chengchuang/portrait/hero-desktop.jpg")} alt="程创" className="w-auto max-w-none object-contain object-bottom select-none" style={{ height: isMobile ? 'clamp(55vh, 65vh, 75vh)' : 'clamp(70vh, 88vh, 92vh)', maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)' }} draggable={false} />
               <div className="absolute bottom-0 left-0 right-0 h-[6%] pointer-events-none" style={{ background: 'linear-gradient(to top, #0C0C0C, transparent)' }} />
             </div>
             {parallaxOn && (
